@@ -26,21 +26,28 @@ AWS region | region that resources will be deployed in | eu-west-2 |
 AWS bucket_name | backet that will store the backup | my-backup-bucket | 
 AWS instance_type | EC2 instance type | t2.micro | 
 backup_path | the directory that will be backuped | n/a | 
+ami_version | the ami version used for ec2 instance | amzn2 (amazon linux 2) |
 
 
-### Deployment
+### Resources
 
 The project should be created these resources in London region:
 
-1. AWS EC2 instance
-2. AWS instance profile
-3. AWS IAM role
-4. AWS IAM policy
-5. AWS security group
-6. Bash script will run at 2 AM to backup dir ```/home/ec2-user/backup``` and push it to S3 backet ```my-backup-bucketbacket```
 
+Resource | Resource name | Description |
+--- | --- | --- |
+AWS EC2 instance | aws_instance | ec2 instance with public IP|
+AWS instance profile | aws_iam_instance_profile | instance profile to be attched to the instance |
+AWS IAM role| aws_iam_role | role to be attched to instance profile|
+AWS IAM policy | aws_iam_policy | iam policy json list permissions for grant access for the instance to s3 bucket|
+Policy role attachment| aws_iam_role_policy_attachment | attachment the iam role and iam policy |
+AWS security group| aws_security_group | security group to allow/deny access to the instance|
+Bash script | Bash | Bash script will run at 2 AM to backup spesfic dir to ```/home/ec2-user/backup``` and push it to S3 backet ```my-backup-bucketbacket``` |
 
-To execute Terraform you should run the commands below.
+### Deploy scripts
+To execute Terraform you should run the commands below. 
+
+**_NOTE:_** The command line will ask for the directory that will be backuped
 
 ```shell
 terraform init

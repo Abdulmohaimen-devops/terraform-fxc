@@ -1,4 +1,4 @@
-data "aws_ami" "amazon-linux-2" {
+data "aws_ami" "amazon-linux" {
  most_recent = true
 
 
@@ -10,6 +10,7 @@ data "aws_ami" "amazon-linux-2" {
 
  filter {
    name   = "name"
-   values = ["amzn2-ami-hvm*"]
+   values = ["${var.ami_version}-ami-hvm*"]
  }
 }
+

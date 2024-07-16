@@ -8,9 +8,9 @@ resource "random_pet" "instance" {
 module "ec2-instance" {
   source = "./modules/aws-ec2-instance"
 
-  ami_id        = data.aws_ami.amazon-linux-2.id
   instance_name = random_pet.instance.id
   instance_type = var.instance_type
+  ami_version   = var.ami_version
   
   bucket_name   = var.bucket_name
   backup_path   = var.backup_path

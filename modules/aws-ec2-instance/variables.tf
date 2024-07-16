@@ -1,9 +1,3 @@
-# EC2 AMI ID
-variable "ami_id" {
-  type        = string
-  description = "AMI id for instance."
-}
-
 # EC2 instance size
 variable "instance_name" {
   type        = string
@@ -27,4 +21,10 @@ variable "bucket_name" {
 variable "backup_path" {
   type        = string
   description = "the path of the backup"
+}
+
+variable "ami_version" {
+  type        = string
+  description = "ec2 ami version"
+  default     = "amzn2"
 }
