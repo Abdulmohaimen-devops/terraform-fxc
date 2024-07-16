@@ -16,6 +16,14 @@ You can install Terraform following the instructions [here](https://learn.hashic
 Once you have Terraform installed successfully, you should configure the [AWS Credentials](https://www.terraform.io/docs/providers/aws/index.html)
 
 
+### Inputs
+The project require the following variables:
+
+1. AWS region | region that resources will be deployed in | default: eu-west-2 
+2. AWS bucket_name | backet that contain the backup | default: my-backup-bucket
+3. AWS instance_type | EC2 instance type | default: t2.micro 
+4. backup_path | the directory that will be backuped|
+
 ### Deployment
 
 The project should be created these resources in London region:

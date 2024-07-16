@@ -19,5 +19,4 @@ variable "instance_type" {
 variable "backup_path" {
   type        = string
   description = "the path of the backup"
-  default = "/etc"
 }
