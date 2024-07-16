@@ -19,10 +19,14 @@ Once you have Terraform installed successfully, you should configure the [AWS Cr
 ### Inputs
 The project require the following variables:
 
-1. AWS region | region that resources will be deployed in | default: eu-west-2 
-2. AWS bucket_name | backet that contain the backup | default: my-backup-bucket
-3. AWS instance_type | EC2 instance type | default: t2.micro 
-4. backup_path | the directory that will be backuped|
+
+Variable name | description |default | 
+--- | --- | --- |
+AWS region | region that resources will be deployed in | eu-west-2 | 
+AWS bucket_name | backet that will store the backup | my-backup-bucket | 
+AWS instance_type | EC2 instance type | t2.micro | 
+backup_path | the directory that will be backuped | n/a | 
+
 
 ### Deployment
 
